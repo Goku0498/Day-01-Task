@@ -1,2 +1,37 @@
-The Evolution of Web Protocols: HTTP/1.1 vs. HTTP/2
-The HyperText Transfer Protocol (HTTP) is the foundation of any data exchange on the Web, and it is a protocol used for transmitting hypertext via the World Wide Web. 
+The Evolution of Web Protocols: HTTP/1.1 vs. HTTP/2:
+
+The HyperText Transfer Protocol (HTTP) is the foundation of any data exchange on the Web, and it is a protocol used for transmitting hypertext via the World Wide Web.
+
+Overview of HTTP/1.1:
+HTTP/1.1, introduced in 1999, brought several improvements over its predecessor, HTTP/1.0. Key features included:
+a) Connections are kept open, allowing multiple requests and responses between the client and serve
+b) Chunked Transfers allowed the server to start sending data before knowing the total size of the content
+c) Methods like PUT, DELETE, and additional headers were introduced
+
+Overview of HTTP/2:
+
+HTTP/2, published in 2015, was developed to address the performance limitations of HTTP/1.1. It is based on Google's SPDY protocol and brings several key enhancements:
+a) Uses a binary protocol instead of the textual format
+b) Multiple requests and responses can be sent concurrently over a single connection
+c) Uses HPACK compression to reduce the overhead caused by large or frequently used headers
+d) Clients can indicate the priority of requests, helping the server to optimize resource delivery
+
+Key Differences Between HTTP/1.1 and HTTP/2:
+HTTP/1.1:
+-> Utilizes multiple connections to handle concurrent requests
+-> Text based protocol, which can be verbose and requires more resources for parsing
+-> Multiple requests often require multiple connections, or they block each other on the same connection
+-> Headers are sent in plain text and repeated with each request, causing significant overhead
+-> Does not support server push, requiring clients to request all resources explicitly
+
+HTTP/2:
+-> Uses a single connection for multiple requests and responses
+-> Binary protocol, leading to more efficient parsing and reduced risk of errors
+-> Allowing multiple streams of data to be sent simultaneously over a single connection without interference
+-> Uses HPACK compression to minimize the size of headers, improving performance
+-> Allows the server to push resources to the client proactively, reducing load times and improving user experience
+
+Reference:
+1 - https://youtu.be/jhqrRT4fvOA?si=BNd46z14geYoeRbt
+2 - https://youtu.be/a-sBfyiXysI?si=EbyoSQMTErIp8dae
+3 - https://youtu.be/EiRZ3IphqKU?si=4RXLgnzbCPGEL1aA
