@@ -1,0 +1,2 @@
+The Evolution of Web Protocols: HTTP/1.1 vs. HTTP/2
+The HyperText Transfer Protocol (HTTP) is the foundation of any data exchange on the Web, and it is a protocol used for transmitting hypertext via the World Wide Web. 
