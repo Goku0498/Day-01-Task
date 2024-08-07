@@ -1,0 +1,17 @@
+Understanding Objects and Their Internal Representation in JavaScript:
+JavaScript, a versatile and widely-used programming language, is built around the concept of objects. Objects in JavaScript are fundamental to both organizing data and structuring code.
+
+What are Objects in JavaScript?
+Object is a collection of key-value pairs where the keys (also known as properties) are strings or symbols, and the values can be any type, including other objects, functions, arrays, or primitive data types.
+
+Syntax:
+let Objectname = {
+  Key1: value1,
+  key2: value2,
+  .
+  .
+  .
+  .
+  key(n): value(n)
+}
+
