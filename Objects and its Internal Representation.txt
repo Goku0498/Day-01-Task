@@ -15,3 +15,69 @@ let Objectname = {
   key(n): value(n)
 }
 
+Internal Representation of Objects:
+
+To understand the internal workings of objects in JavaScript, it helps to look at how the JavaScript engine handles objects behind the scenes.
+
+Property Attributes
+Each property of a JavaScript object has associated attributes:
+
+1- Value: The value associated with the property.
+2- Writable: If true, the value of the property can be changed.
+3- Enumerable: If true, the property will be listed in loops (such as for...in loops).
+4- Configurable: If true, the property can be deleted or its attributes can be modified.
+
+You can define these attributes using Object.defineProperty:
+
+let person = {};
+Object.defineProperty(person, 'name', {
+  value: 'Gokul',
+  writable: true,
+  enumerable: true,
+  configurable: true
+});
+
+Hidden Classes and Inline Caches:
+Modern JavaScript engines, like V8 (used in Chrome and Node.js), use hidden classes and inline caches to optimize object property access.
+
+Hidden Classes: 
+a) When an object is created, the JavaScript engine creates a hidden class for that object. 
+b) This hidden class is similar to classes in traditional object-oriented languages but is created dynamically. 
+c) As properties are added to an object, the hidden class is updated, which helps the engine optimize property access.
+
+Inline Caches:
+a) These are used to speed up repeated property access. 
+b) When a property is accessed for the first time, the engine stores information about where the property is located
+c) On subsequent accesses, this cached information is used to quickly locate the property.
+
+Working with Objects:
+
+1- Accessing and Modifying Properties can be done using dot notation or bracket notation
+
+Ex: console.log(person.name); // Dot notation
+    console.log(person['age']); // Bracket notation
+
+2- Adding can be done dynamically and Deleting can be done sing the delete operator
+
+Ex: person.city = "Erode";
+    delete person.age;
+
+3- Methods are functions stored as object properties. The 'this' keyword within a method refers to the object on which the method was called
+
+Ex: let person = {
+    name: "Gokul",
+    greet: function() {
+        console.log("Hello, my name is " + this.name);
+    }
+    };
+
+person.greet(); // Output: Hello, my name is Gokul
+
+Prototypes and Inheritance
+Every JavaScript object has a prototype, another object from which it inherits properties. This is a key feature of JavaScript’s prototype-based inheritance model.
+
+When a property is accessed, the JavaScript engine first looks at the object itself. If the property is not found, it looks at the object's prototype, and then the prototype's prototype, and so on, until it either finds the property or reaches the end of the prototype chain.
+
+Reference:
+1-> https://www.geeksforgeeks.org/objects-in-javascript/
+2-> https://www.w3schools.com/js/js_objects.asp
